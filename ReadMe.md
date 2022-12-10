@@ -1,5 +1,6 @@
 NOTE: all the command are executed from java-compile folder unless specified
 
+---
 ### Single class : [students](/src/com/tsm/students)
 - Compile the class: <br>
   `javac -d <outputDirectory> <javaFilePath>` <br>
@@ -23,10 +24,28 @@ NOTE: all the command are executed from java-compile folder unless specified
   Run compiled class : `java <mainClassName>` <br> 
   e.g. `java StudentReport`
 
-- *Note:* Since `StudentReport` class in invoking other class, so we do not need to manually compile other classes
+- *NOTE : * Since `StudentReport` class in invoking other class, so we do not need to manually compile other classes
   - Delete the out/student-multiple folder
-  - Compile :`javac -sourcepath src/com/tsm/student-multiple -d out/student-multiple src/com/tsm/student-multiple/StudentReport.java ` <br>
+  - Compile :`javac -sourcepath src/com/tsm/student-multiple -d out/student-multiple src/com/tsm/student-multiple/StudentReport.java` <br>
     `-sourcepath <pathForAlldependentFiles>` specifies path for dependent java files
   - Execute : <br>
     `cd out/student-multiple` <br>
     `java StudentReport`
+
+---
+### PACKAGE : [tsm_package](/src/com/tsm_package)
+#### Single class : [students](/src/com/tsm_package/students)
+- To structure compiled class in packaged based structure just add <br>
+`package com.tsm_package.students;`
+- then compile `javac -d out src/com/tsm_package/students/Student.java`
+- now all the file will be in package structure under out.
+- execute `cd out`, `java com.tsm_package.students.Student`
+
+#### Multiple  class : [student-multiple](/src/com/tsm_package/student_multiple)
+
+- To structure compiled class in packaged based structure just add <br>
+  `package com.tsm_package.student_multiple;`
+- then compile `javac -sourcepath src -d out src/com/tsm_package/student_multiple/StudentReport.java`
+  <br>*NOTE :* here with `sourcepath` we only specified root folder not complete directory of dependent java files
+- now all the file will be in package structure under out.
+- execute `cd out`, `java com.tsm_package.student_multiple.StudentReport`
