@@ -26,7 +26,7 @@ NOTE: all the command are executed from java-compile folder unless specified
 - *Note:* Since `StudentReport` class in invoking other class, so we do not need to manually compile other classes
   - Delete the out/student-multiple folder
   - Compile :`javac -sourcepath src/com/tsm/student-multiple -d out/student-multiple src/com/tsm/student-multiple/StudentReport.java ` <br>
-    `-sourcepath <pathForAlldependentFiles>`
+    `-sourcepath <pathForAlldependentFiles>` specifies path for dependent java files
   - Execute : <br>
     `cd out/student-multiple` <br>
     `java StudentReport`
